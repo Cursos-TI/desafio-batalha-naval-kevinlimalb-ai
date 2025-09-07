@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+#define TAMANHO 10
+
+int main() {
+    // Criando o tabuleiro
+    int tabuleiro[TAMANHO][TAMANHO] = {0};
+
+    // Definindo o navio horizontal
+    int navio_horizontal_linha = 2; // Linha fixa
+    int navio_horizontal_coluna_inicio = 3; // Coluna inicial
+    int tamanho_navio_horizontal = 4;
+
+    // Definindo o navio vertical
+    int navio_vertical_coluna = 6; // Coluna fixa
+    int navio_vertical_linha_inicio = 5; // Linha inicial
+    int tamanho_navio_vertical = 3;
+
+    // Posicionando o navio horizontal
+    printf("Coordenadas do Navio Horizontal:\n");
+    for (int i = 0; i < tamanho_navio_horizontal; i++) {
+        int linha = navio_horizontal_linha;
+        int coluna = navio_horizontal_coluna_inicio + i;
+        tabuleiro[linha][coluna] = 1;
+        printf("(%d, %d)\n", linha, coluna);
+    }
+
+    // Posicionando o navio vertical
+    printf("\nCoordenadas do Navio Vertical:\n");
+    for (int i = 0; i < tamanho_navio_vertical; i++) {
+        int linha = navio_vertical_linha_inicio + i;
+        int coluna = navio_vertical_coluna;
+        tabuleiro[linha][coluna] = 1;
+        printf("(%d, %d)\n", linha, coluna);
+    }
+
+    return 0;
+}
